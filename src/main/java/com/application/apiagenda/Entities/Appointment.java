@@ -1,4 +1,4 @@
-package Entities;
+package com.application.apiagenda.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -11,20 +11,24 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="tarea")
-public class Task {
+@Table(name="Cita")
+public class Appointment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="titulo")
-    private String title;
-    @Column(name="descripcion")
-    private String description;
+    @Column(name="recordatorio")
+    private String reminder;
     @Column(name="fecha")
     @Temporal(TemporalType.DATE)
     private Date date;
     @ManyToOne
     @JoinColumn(name = "id_usuario",nullable = false)
     @JsonIgnore
-    private User userTask;
+    private User userAppointment;
+    @ManyToOne
+    @JoinColumn(name = "id_contacto",nullable = false)
+    @JsonIgnore
+    private Contact contact;
+
 }

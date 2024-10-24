@@ -1,4 +1,4 @@
-package Entities;
+package com.application.apiagenda.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -6,7 +6,7 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Data
 @Setter
 @Getter
 @Builder
@@ -22,12 +22,12 @@ public class User {
     private String name;
     @Column(name="correo")
     private String address;
-    @Column(name="contraseña")
+    @Column(name="password")
     private String password;
     @OneToMany(mappedBy = "userContact", cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private List<Contact> contactList = new ArrayList<>();
-    @OneToMany(mappedBy = "userAppointement", cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "userAppointment", cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private List<Appointment> appointmentList = new ArrayList<>();
     @OneToMany(mappedBy = "userTask", cascade = CascadeType.ALL,fetch = FetchType.LAZY, orphanRemoval = true)

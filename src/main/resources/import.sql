@@ -1,5 +1,5 @@
-INSERT INTO usuario(id,nombre,correo,contraseña) VALUES(1,'Luis','prueba1@gmail.com','123456');
-INSERT INTO usuario(id,nombre,correo,contraseña) VALUES(2,'Antonio','prueba2@gmail.com','112233');
+INSERT INTO usuario(id,nombre,correo,password) VALUES(1,'Luis','prueba1@gmail.com','123456');
+INSERT INTO usuario(id,nombre,correo,password) VALUES(2,'Antonio','prueba2@gmail.com','112233');
 
 
 INSERT INTO contacto(id,nombre,telefono,direccion,id_usuario) VALUES(1, 'Contacto232','945454658','Jr.Cacere',1);
